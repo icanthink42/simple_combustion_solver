@@ -1,0 +1,18 @@
+[solver]
+name = "Combustion Chamber Simulation"
+description = "Simulates combustion chamber performance across a range of mass flow rates"
+type = "python"
+input_type = "key_value_pair"
+predefined_keys = [
+    "mdot_min",
+    "mdot_max",
+    "mdot_samples",
+    "T_in",
+    "P_in",
+    "fuel_air_ratio",
+    "radius"
+]
+
+[type_specific]
+main_file = "main.py"
+python_version = "3.10"
