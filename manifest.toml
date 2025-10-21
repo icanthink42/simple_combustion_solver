@@ -13,6 +13,17 @@ predefined_keys = [
     "radius"
 ]
 
+[solver.predefined_units]
+mdot_min = "kg/s"
+mdot_max = "kg/s"
+T_in = "K"
+P_in = "Pa"
+radius = "m"
+gamma = "1"
+c_p = "J/kg·K"
+r_gas = "J/kg·K"
+kerosene_LHV = "J/kg"
+
 [type_specific]
 main_file = "main.py"
 python_version = "3.10"
