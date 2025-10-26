@@ -70,11 +70,11 @@ def main(input_data):
     fig = make_subplots(
         rows=3, cols=2,
         subplot_titles=(
-            'Stagnation Temperature vs Velocity',
-            'Stagnation Pressure vs Velocity',
-            'Stagnation Density vs Velocity',
-            'Exit Velocity vs Velocity',
-            'Mach vs Velocity'
+            'Stagnation Temperature vs Mass Flow Rate',
+            'Stagnation Pressure vs Mass Flow Rate',
+            'Stagnation Density vs Mass Flow Rate',
+            'Exit Velocity vs Mass Flow Rate',
+            'Mach vs Mass Flow Rate'
         )
     )
 
@@ -104,7 +104,7 @@ def main(input_data):
     fig.update_layout(
         height=1200,
         showlegend=True,
-        title_text="Flow Properties vs Velocity"
+        title_text="Flow Properties vs Mass Flow Rate"
     )
 
     # Add annotation if solutions were excluded due to divergence
