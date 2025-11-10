@@ -42,6 +42,13 @@ class FlowState:
     def velocity(self):
         return self.mach * (self.gamma * self.r_gas * self.temperature()) ** 0.5
 
+    def stagnation_enthalpy(self):
+        return self.c_p * self.stagnation_temperature + self.velocity()**2 / 2
+
+    def enthalpy(self):
+        stag_enthalpy = self.c_p * self.stagnation_temperature + self.velocity()**2 / 2
+        return isentropic.enthalpy_from_stag(self.mach, stag_enthalpy, self.gamma)
+
     def m_dot(self):
         return self.density() * self.velocity() * self.area
 
@@ -125,6 +132,9 @@ class FlowState:
 
         return FlowState(new_mach, new_stag_temp, new_stag_pressure, new_stag_density, self.gamma, self.c_p, self.area, self.r_gas)
 
+    def compressor_pressure_increase(self, enthalpy_increase):
+
+        new_stag_enthalpy = self.enthalpy() + enthalpy_increase
 
 
 def main():

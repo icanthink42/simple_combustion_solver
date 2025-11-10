@@ -13,6 +13,11 @@ def rho_rho_t(mach, gamma):
     """Density ratio rho/rhot"""
     return 1.0 / ((1 + 0.5 * (gamma - 1) * mach ** 2) ** (1.0 / (gamma - 1)))
 
+def h_h_t(mach, gamma):
+    """Enthalpy ratio h/ht"""
+    return 1.0 / (1 + 0.5 * (gamma - 1) * mach ** 2)
+
+
 # Full
 
 def stag_temp(mach, temp, gamma):
@@ -32,6 +37,12 @@ def stag_density(mach, density, gamma):
 
 def density_from_stag(mach, density, gamma):
     return density * rho_rho_t(mach, gamma)
+
+def stag_enthalpy(mach, enthalpy, gamma):
+    return enthalpy / h_h_t(mach, gamma)
+
+def enthalpy_from_stag(mach, enthalpy, gamma):
+    return enthalpy * h_h_t(mach, gamma)
 
 def mdot_from_pressure_drop(init_stag_pressure, exit_pressure, gamma, r_gas, stag_temp, area, c_d=0.95):
     """Calculate mass flow rate through an orifice using compressible flow equation.

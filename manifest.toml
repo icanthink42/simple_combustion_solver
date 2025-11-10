@@ -10,7 +10,10 @@ predefined_keys = [
     "T_in",
     "P_in",
     "fuel_air_ratio",
-    "radius"
+    "outer_radius",
+    "inner_radius",
+    "wall_thickness",
+    "wall_conductivity"
 ]
 
 [solver.predefined_units]
@@ -18,7 +21,12 @@ mdot_min = "kg/s"
 mdot_max = "kg/s"
 T_in = "K"
 P_in = "Pa"
-radius = "m"
+outer_radius = "m"
+inner_radius = "m"
+wall_thickness = "m"
+wall_conductivity = "W/m·K"
+h_external = "W/m²·K"
+external_temp = "K"
 gamma = "1"
 c_p = "J/kg·K"
 r_gas = "J/kg·K"
